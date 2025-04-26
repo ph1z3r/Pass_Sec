@@ -166,31 +166,31 @@ def view_password(id):
                           decrypted_password=decrypted_password,
                           form=form)
 
-@app.route('/password/generate', methods=['GET', 'POST'])
-@login_required
-def generate_password():
-    """Generate a secure password."""
-    form = GeneratePasswordForm()
-    generated_password = None
-    password_strength = None
+# @app.route('/password/generate', methods=['GET', 'POST'])
+# @login_required
+# def generate_password():
+#     """Generate a secure password."""
+#     form = GeneratePasswordForm()
+#     generated_password = None
+#     password_strength = None
     
-    if form.validate_on_submit():
-        try:
-            generated_password = password_generator.generate_password(
-                length=form.length.data,
-                use_uppercase=form.uppercase.data,
-                use_digits=form.digits.data,
-                use_symbols=form.symbols.data
-            )
+#     if form.validate_on_submit():
+#         try:
+#             generated_password = password_generator.generate_password(
+#                 length=form.length.data,
+#                 use_uppercase=form.uppercase.data,
+#                 use_digits=form.digits.data,
+#                 use_symbols=form.symbols.data
+#             )
             
-            password_strength = password_generator.evaluate_strength(generated_password)
-        except ValueError as e:
-            flash(str(e), 'danger')
+#             password_strength = password_generator.evaluate_strength(generated_password)
+#         except ValueError as e:
+#             flash(str(e), 'danger')
     
-    return render_template('generate_password.html', 
-                          form=form,
-                          generated_password=generated_password, 
-                          password_strength=password_strength)
+#     return render_template('generate_password.html', 
+#                           form=form,
+#                           generated_password=generated_password, 
+#                           password_strength=password_strength)
 
 @app.route('/api/generate-password', methods=['POST'])
 @login_required
