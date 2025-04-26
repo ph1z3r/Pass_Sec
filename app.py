@@ -61,7 +61,7 @@ with app.app_context():
     app.add_url_rule('/dashboard', 'dashboard', views.dashboard)
     app.add_url_rule('/add-password', 'add_password', views.add_password, methods=['GET', 'POST'])
     app.add_url_rule('/password/<int:id>', 'view_password', views.view_password, methods=['GET', 'POST'])
-    app.add_url_rule('/generate-password', 'generate_password', views.generate_password, methods=['GET', 'POST'])
+    #removed ***
     app.add_url_rule('/password/edit/<int:id>', 'edit_password', views.edit_password, methods=['GET', 'POST'])
     app.add_url_rule('/password/delete/<int:id>', 'delete_password', views.delete_password)
     

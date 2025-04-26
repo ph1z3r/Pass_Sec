@@ -196,13 +196,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Check for password in URL (from the generate password page)
-    const urlParams = new URLSearchParams(window.location.search);
-    const generatedPassword = urlParams.get('generated_password');
-    if (generatedPassword && passwordInput) {
-        passwordInput.value = generatedPassword;
-        // Trigger password strength check
-        const event = new Event('input', { bubbles: true });
-        passwordInput.dispatchEvent(event);
-    }
+   
 });
