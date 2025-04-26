@@ -1,5 +1,4 @@
 @echo off
-cd /d "C:\Users\HYPERYASH\Documents\major project\Pass_Sec"
 
 echo Installing required packages...
 pip install -r requirements.txt
