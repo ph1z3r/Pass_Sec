@@ -14,7 +14,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 
 class EncryptionManager:
-    """Manages encryption and decryption of sensitive data."""
+
     
     def __init__(self):
         """Initialize the encryption manager."""
